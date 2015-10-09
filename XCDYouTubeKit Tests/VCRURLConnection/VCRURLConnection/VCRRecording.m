@@ -23,7 +23,7 @@
 
 #import "VCRRecording.h"
 #import "VCROrderedMutableDictionary.h"
-#import "VCRError.h"
+#import "VCRErrorSerialization.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 
 // For -[NSData initWithBase64Encoding:] and -[NSData base64Encoding]
@@ -52,7 +52,7 @@
         [self setBody:body];
         
         if (json[@"error"]) {
-            self.error = [[VCRError alloc] initWithJSON:json[@"error"]];
+            self.error = ErrorWithJSON(json[@"error"]);
         }
     }
     return self;
@@ -119,7 +119,7 @@
     
     NSError *error = self.error;
     if (error) {
-        dictionary[@"error"] = [VCRError JSONForError:error];
+        dictionary[@"error"] = JSONWithError(error);
     }
     
     VCROrderedMutableDictionary *sortedDict = [VCROrderedMutableDictionary dictionaryWithCapacity:[infoDict count]];
