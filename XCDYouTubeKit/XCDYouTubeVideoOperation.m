@@ -146,7 +146,7 @@ typedef NS_ENUM(NSUInteger, XCDYouTubeRequestType) {
 
 - (void) handleConnectionError:(NSError *)connectionError
 {
-	NSDictionary *userInfo = @{ NSLocalizedDescriptionKey: connectionError.localizedDescription,
+	NSDictionary *userInfo = @{ NSLocalizedDescriptionKey: connectionError.localizedDescription ?: @"???",
 	                            NSUnderlyingErrorKey: connectionError };
 	self.lastError = [NSError errorWithDomain:XCDYouTubeVideoErrorDomain code:XCDYouTubeErrorNetwork userInfo:userInfo];
 	
