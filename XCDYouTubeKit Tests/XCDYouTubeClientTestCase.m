@@ -220,19 +220,32 @@
 // Disable internet connection before running
 - (void) testConnectionError_offline
 {
+	NSLog(@"%@:%@ | %@", @(__FILE__), @(__LINE__), @(__PRETTY_FUNCTION__));
 	__weak XCTestExpectation *expectation = [self expectationWithDescription:@""];
+	NSLog(@"%@:%@ | %@", @(__FILE__), @(__LINE__), @(__PRETTY_FUNCTION__));
 	[[XCDYouTubeClient defaultClient] getVideoWithIdentifier:@"EdeVaT-zZt4" completionHandler:^(XCDYouTubeVideo *video, NSError *error)
 	{
+		NSLog(@"%@:%@ | %@", @(__FILE__), @(__LINE__), @(__PRETTY_FUNCTION__));
 		XCTAssertNil(video);
+		NSLog(@"%@:%@ | %@", @(__FILE__), @(__LINE__), @(__PRETTY_FUNCTION__));
 		XCTAssertEqualObjects(error.domain, XCDYouTubeVideoErrorDomain);
+		NSLog(@"%@:%@ | %@", @(__FILE__), @(__LINE__), @(__PRETTY_FUNCTION__));
 		XCTAssertEqual(error.code, XCDYouTubeErrorNetwork);
+		NSLog(@"%@:%@ | %@", @(__FILE__), @(__LINE__), @(__PRETTY_FUNCTION__));
 		XCTAssertEqualObjects(error.localizedDescription, @"The Internet connection appears to be offline.");
+		NSLog(@"%@:%@ | %@", @(__FILE__), @(__LINE__), @(__PRETTY_FUNCTION__));
 		NSError *underlyingError = error.userInfo[NSUnderlyingErrorKey];
+		NSLog(@"%@:%@ | %@", @(__FILE__), @(__LINE__), @(__PRETTY_FUNCTION__));
 		XCTAssertEqualObjects(underlyingError.domain, NSURLErrorDomain);
+		NSLog(@"%@:%@ | %@", @(__FILE__), @(__LINE__), @(__PRETTY_FUNCTION__));
 		XCTAssertEqual(underlyingError.code, NSURLErrorNotConnectedToInternet);
+		NSLog(@"%@:%@ | %@", @(__FILE__), @(__LINE__), @(__PRETTY_FUNCTION__));
 		[expectation fulfill];
+		NSLog(@"%@:%@ | %@", @(__FILE__), @(__LINE__), @(__PRETTY_FUNCTION__));
 	}];
+	NSLog(@"%@:%@ | %@", @(__FILE__), @(__LINE__), @(__PRETTY_FUNCTION__));
 	[self waitForExpectationsWithTimeout:5 handler:nil];
+	NSLog(@"%@:%@ | %@", @(__FILE__), @(__LINE__), @(__PRETTY_FUNCTION__));
 }
 
 - (void) testUsingClientOnNonMainThread

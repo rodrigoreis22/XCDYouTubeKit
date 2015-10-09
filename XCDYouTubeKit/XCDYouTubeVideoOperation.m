@@ -93,6 +93,7 @@ typedef NS_ENUM(NSUInteger, XCDYouTubeRequestType) {
 
 - (void) startRequestWithURL:(NSURL *)url type:(XCDYouTubeRequestType)requestType
 {
+	NSLog(@"%@:%@ | %@", @(__FILE__), @(__LINE__), @(__PRETTY_FUNCTION__));
 	// Max (age-restricted VEVO) = 2×GetVideoInfo + 1×WatchPage + 1×EmbedPage + 1×JavaScriptPlayer + 1×GetVideoInfo
 	if (++self.requestCount > 6)
 	{
@@ -107,8 +108,10 @@ typedef NS_ENUM(NSUInteger, XCDYouTubeRequestType) {
 	[request setValue:self.languageIdentifier forHTTPHeaderField:@"Accept-Language"];
 	
 	NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration ephemeralSessionConfiguration]];
+	NSLog(@"%@:%@ | %@", @(__FILE__), @(__LINE__), @(__PRETTY_FUNCTION__));
 	NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
 	{
+		NSLog(@"%@:%@ | %@", @(__FILE__), @(__LINE__), @(__PRETTY_FUNCTION__));
 		if (error)
 			[self handleConnectionError:error];
 		else
@@ -123,6 +126,7 @@ typedef NS_ENUM(NSUInteger, XCDYouTubeRequestType) {
 
 - (void) handleConnectionSuccessWithData:(NSData *)data response:(NSURLResponse *)response requestType:(XCDYouTubeRequestType)requestType
 {
+	NSLog(@"%@:%@ | %@", @(__FILE__), @(__LINE__), @(__PRETTY_FUNCTION__));
 	switch (requestType)
 	{
 		case XCDYouTubeRequestTypeGetVideoInfo:
@@ -146,7 +150,8 @@ typedef NS_ENUM(NSUInteger, XCDYouTubeRequestType) {
 
 - (void) handleConnectionError:(NSError *)connectionError
 {
-	NSDictionary *userInfo = @{ NSLocalizedDescriptionKey: connectionError.localizedDescription ?: @"???",
+	NSLog(@"%@:%@ | %@", @(__FILE__), @(__LINE__), @(__PRETTY_FUNCTION__));
+	NSDictionary *userInfo = @{ NSLocalizedDescriptionKey: connectionError.localizedDescription,
 	                            NSUnderlyingErrorKey: connectionError };
 	self.lastError = [NSError errorWithDomain:XCDYouTubeVideoErrorDomain code:XCDYouTubeErrorNetwork userInfo:userInfo];
 	
@@ -274,16 +279,22 @@ typedef NS_ENUM(NSUInteger, XCDYouTubeRequestType) {
 
 - (void) main
 {
+	NSLog(@"%@:%@ | %@", @(__FILE__), @(__LINE__), @(__PRETTY_FUNCTION__));
 	if ([NSThread isMainThread])
 		@throw [NSException exceptionWithName:NSGenericException reason:@"XCDYouTubeVideoOperation must not be executed on the main thread." userInfo:nil];
 	
 	XCDYouTubeLogInfo(@"Starting video operation: %@", self);
 	
+	NSLog(@"%@:%@ | %@", @(__FILE__), @(__LINE__), @(__PRETTY_FUNCTION__));
 	self.eventLabels = [[NSMutableArray alloc] initWithArray:@[ @"embedded", @"detailpage" ]];
 	[self startNextRequest];
 	
 	while (self.keepRunning)
+	{
+		NSLog(@"%@:%@ | %@", @(__FILE__), @(__LINE__), @(__PRETTY_FUNCTION__));
 		[[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
+	}
+	NSLog(@"%@:%@ | %@", @(__FILE__), @(__LINE__), @(__PRETTY_FUNCTION__));
 }
 
 - (void) cancel
