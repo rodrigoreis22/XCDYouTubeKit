@@ -4,8 +4,5 @@
 
 #import <XCTest/XCTest.h>
 
-#import "VCR.h"
-#import "VCRCassetteManager.h"
-
 @interface XCDYouTubeKitTestCase : XCTestCase
 @end

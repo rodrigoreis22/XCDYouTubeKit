@@ -60,11 +60,6 @@
             isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable
-            key = "VCR_CASSETTES_DIRECTORY"
-            value = "$(SRCROOT)/XCDYouTubeKit Tests/Cassettes"
-            isEnabled = "NO">
-         </EnvironmentVariable>
-         <EnvironmentVariable
             key = "ONLINE_TESTS"
             value = "YES"
             isEnabled = "NO">
