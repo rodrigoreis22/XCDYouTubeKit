@@ -110,6 +110,7 @@ typedef NS_ENUM(NSUInteger, XCDYouTubeRequestType) {
 	NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration ephemeralSessionConfiguration]];
 	self.dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
 	{
+		XCDYouTubeLogDebug(@"completionHandler: %p %p %p", data, response, error);
 		if (error)
 			[self handleConnectionError:error];
 		else
