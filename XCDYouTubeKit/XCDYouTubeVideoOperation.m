@@ -26,6 +26,7 @@ typedef NS_ENUM(NSUInteger, XCDYouTubeRequestType) {
 @property (atomic, assign) NSInteger requestCount;
 @property (atomic, assign) XCDYouTubeRequestType requestType;
 @property (atomic, strong) NSMutableArray *eventLabels;
+@property (atomic, readonly) NSURLSession *session;
 @property (atomic, strong) NSURLSessionDataTask *dataTask;
 
 @property (atomic, assign) BOOL keepRunning;
@@ -73,6 +74,7 @@ static NSOperationQueue * delegateQueue_log(id self, SEL _cmd)
 	_videoIdentifier = videoIdentifier ?: @"";
 	_languageIdentifier = languageIdentifier ?: @"en";
 	
+	_session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration ephemeralSessionConfiguration]];
 	_keepRunning = YES;
 	
 	return self;
@@ -124,9 +126,8 @@ static NSOperationQueue * delegateQueue_log(id self, SEL _cmd)
 	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
 	[request setValue:self.languageIdentifier forHTTPHeaderField:@"Accept-Language"];
 	
-	NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration ephemeralSessionConfiguration]];
-	XCDYouTubeLogDebug(@"delegateQueue: %@", session.delegateQueue);
-	self.dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+	XCDYouTubeLogDebug(@"delegateQueue: %@", self.session.delegateQueue);
+	self.dataTask = [self.session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
 	{
 		XCDYouTubeLogDebug(@"completionHandler: %p %p %p", data, response, error);
 		if (error)
