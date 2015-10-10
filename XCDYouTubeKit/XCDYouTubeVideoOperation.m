@@ -44,23 +44,6 @@ typedef NS_ENUM(NSUInteger, XCDYouTubeRequestType) {
 
 @implementation XCDYouTubeVideoOperation
 
-static NSOperationQueue * (*delegateQueueIMP)(id, SEL);
-
-static NSOperationQueue * delegateQueue_log(id self, SEL _cmd)
-{
-	NSOperationQueue *delegateQueue = delegateQueueIMP(self, _cmd);
-	NSLog(@"********** -[%@ delegateQueue] = %@", self, delegateQueue);
-	return delegateQueue;
-}
-
-+ (void) load
-{
-	Class __NSURLSessionLocal = NSClassFromString(@"__NSURLSessionLocal");
-	Method delegateQueue = class_getInstanceMethod(__NSURLSessionLocal, @selector(delegateQueue));
-	delegateQueueIMP = (__typeof__(delegateQueueIMP))method_getImplementation(delegateQueue);
-	method_setImplementation(delegateQueue, (IMP)delegateQueue_log);
-}
-
 - (instancetype) init
 {
 	@throw [NSException exceptionWithName:NSGenericException reason:@"Use the `initWithVideoIdentifier:languageIdentifier:` method instead." userInfo:nil];
