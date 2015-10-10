@@ -16,7 +16,7 @@
 {
 	[super setUp];
 	
-	[objc_getClass("__NSURLSessionLocal") xtrace];
+	[Xtrace traceClassPattern:@"NSURLSession|NS.*Operation" excluding:nil];
 }
 
 - (void) testThatVideoIsAvailalbe
