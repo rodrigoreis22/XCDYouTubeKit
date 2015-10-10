@@ -5,10 +5,19 @@
 #import <XCTest/XCTest.h>
 #import <XCDYouTubeKit/XCDYouTubeClient.h>
 
+#import "Xtrace.h"
+
 @interface XCDYouTubeClientTestCase : XCTestCase
 @end
 
 @implementation XCDYouTubeClientTestCase
+
+- (void) setUp
+{
+	[super setUp];
+	
+	[objc_getClass("__NSURLSessionLocal") xtrace];
+}
 
 - (void) testThatVideoIsAvailalbe
 {

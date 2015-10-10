@@ -68,6 +68,8 @@
 		C2F0E59B1944F8CA00D8EBA8 /* XCDYouTubeVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = C25308C718D739EB00132734 /* XCDYouTubeVideo.m */; };
 		C2F0E59C1944F8CF00D8EBA8 /* XCDYouTubeVideoOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C24C162D18E9A139005E92E9 /* XCDYouTubeVideoOperation.m */; };
 		C2F0E59D1944F8D600D8EBA8 /* XCDYouTubeVideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A3F2D717F4827800AC1C3B /* XCDYouTubeVideoPlayerViewController.m */; };
+		C2F6A26B1BC9C16600D9E5D5 /* Xtrace.mm in Sources */ = {isa = PBXBuildFile; fileRef = C2F6A26A1BC9C16600D9E5D5 /* Xtrace.mm */; };
+		C2F6A26C1BC9C16600D9E5D5 /* Xtrace.mm in Sources */ = {isa = PBXBuildFile; fileRef = C2F6A26A1BC9C16600D9E5D5 /* Xtrace.mm */; };
 		C2FB52DE1918F88C00B2CBE6 /* XCDYouTubePlayerScript.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FB52DD1918F88C00B2CBE6 /* XCDYouTubePlayerScript.m */; };
 /* End PBXBuildFile section */
 
@@ -137,6 +139,8 @@
 		C2D0CC5A1912693400DA8CD4 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		C2DD4DA2191FFDE100AF6F85 /* XCDYouTubeKit OS X Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "XCDYouTubeKit OS X Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2F0E5731944F10E00D8EBA8 /* XCDYouTubeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XCDYouTubeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2F6A2691BC9C16600D9E5D5 /* Xtrace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Xtrace.h; sourceTree = "<group>"; };
+		C2F6A26A1BC9C16600D9E5D5 /* Xtrace.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Xtrace.mm; sourceTree = "<group>"; };
 		C2FB52DC1918F88C00B2CBE6 /* XCDYouTubePlayerScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCDYouTubePlayerScript.h; sourceTree = "<group>"; };
 		C2FB52DD1918F88C00B2CBE6 /* XCDYouTubePlayerScript.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCDYouTubePlayerScript.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -198,6 +202,8 @@
 		C20F57A118817D5400EDBFB0 /* XCDYouTubeKit Tests */ = {
 			isa = PBXGroup;
 			children = (
+				C2F6A2691BC9C16600D9E5D5 /* Xtrace.h */,
+				C2F6A26A1BC9C16600D9E5D5 /* Xtrace.mm */,
 				C20F57A718817D5400EDBFB0 /* XCDYouTubeClientTestCase.m */,
 			);
 			path = "XCDYouTubeKit Tests";
@@ -571,6 +577,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2F6A26B1BC9C16600D9E5D5 /* Xtrace.mm in Sources */,
 				C20F57A818817D5400EDBFB0 /* XCDYouTubeClientTestCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -606,6 +613,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2F6A26C1BC9C16600D9E5D5 /* Xtrace.mm in Sources */,
 				C2DD4DBE1920034400AF6F85 /* XCDYouTubeClientTestCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
