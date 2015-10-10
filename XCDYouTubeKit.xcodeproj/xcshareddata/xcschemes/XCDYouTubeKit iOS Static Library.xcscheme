@@ -51,18 +51,13 @@
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "XCDYouTubeKitLogLevel"
-            value = "0"
+            value = "0xF"
             isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "CFNETWORK_LOG"
             value = "1"
             isEnabled = "YES">
-         </EnvironmentVariable>
-         <EnvironmentVariable
-            key = "ONLINE_TESTS"
-            value = "YES"
-            isEnabled = "NO">
          </EnvironmentVariable>
       </EnvironmentVariables>
    </TestAction>
