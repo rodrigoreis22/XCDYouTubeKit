@@ -16,7 +16,7 @@
 {
 	[super setUp];
 	
-	[Xtrace traceClassPattern:@"NSURLSession|NS.*Operation" excluding:nil];
+	[Xtrace traceClassPattern:@"URL|Operation" excluding:nil];
 }
 
 - (void) testThatVideoIsAvailalbe
