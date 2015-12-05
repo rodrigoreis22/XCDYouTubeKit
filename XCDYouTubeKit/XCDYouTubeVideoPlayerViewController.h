@@ -63,6 +63,8 @@ MP_EXTERN NSString *const XCDYouTubeVideoUserInfoKey;
  */
 - (instancetype) initWithVideoIdentifier:(nullable NSString *)videoIdentifier __attribute__((objc_designated_initializer));
 
+- (instancetype) initWithContentURL:(nullable NSURL *)contentURL __attribute__((objc_designated_initializer));
+
 /**
  *  ------------------------------------
  *  @name Accessing the video identifier
