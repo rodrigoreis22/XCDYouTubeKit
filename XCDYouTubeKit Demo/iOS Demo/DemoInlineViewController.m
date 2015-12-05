@@ -30,7 +30,10 @@
 	[self.videoContainerView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
 	
 	NSString *videoIdentifier = [[NSUserDefaults standardUserDefaults] objectForKey:@"VideoIdentifier"];
-	self.videoPlayerViewController = [[XCDYouTubeVideoPlayerViewController alloc] initWithVideoIdentifier:videoIdentifier];
+//	NSString *instagramUrl = @"http://scontent.cdninstagram.com/hphotos-xpt1/l/t50.2886-16/12228613_1637893533126359_1196145487_n.mp4";
+	NSString *instagramUrl = @"http://cdn.stationfy.com/videos/55e565bd94a01c9912283caa/index.m3u8";
+	NSURL *movieURL = [NSURL URLWithString:instagramUrl];
+	self.videoPlayerViewController = [[XCDYouTubeVideoPlayerViewController alloc] initWithContentURL:movieURL];
 	self.videoPlayerViewController.moviePlayer.backgroundPlaybackEnabled = [[NSUserDefaults standardUserDefaults] boolForKey:@"PlayVideoInBackground"];
 	[self.videoPlayerViewController presentInView:self.videoContainerView];
 	
