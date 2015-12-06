@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E71D3211C13C5D70014ED0C /* EmbedVideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E71D31F1C13C5D70014ED0C /* EmbedVideoPlayerViewController.m */; };
+		9E71D3221C13C6170014ED0C /* EmbedVideoPlayerViewController.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 9E71D3201C13C5D70014ED0C /* EmbedVideoPlayerViewController.h */; };
+		9E71D3231C13C6960014ED0C /* EmbedVideoPlayerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E71D3201C13C5D70014ED0C /* EmbedVideoPlayerViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E71D3251C13C6A50014ED0C /* EmbedVideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E71D31F1C13C5D70014ED0C /* EmbedVideoPlayerViewController.m */; };
 		C20F579D18817D5400EDBFB0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C20F579C18817D5400EDBFB0 /* XCTest.framework */; };
 		C20F57A818817D5400EDBFB0 /* XCDYouTubeClientTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = C20F57A718817D5400EDBFB0 /* XCDYouTubeClientTestCase.m */; };
 		C20F57AF1881804D00EDBFB0 /* libXCDYouTubeKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2A3F2CD17F4827800AC1C3B /* libXCDYouTubeKit.a */; };
@@ -178,6 +182,7 @@
 				C2A7E8B818EE205D005B8B5F /* XCDYouTubeVideo.h in Copy Files */,
 				C2D0CBAE19122B4800DA8CD4 /* XCDYouTubeVideoOperation.h in Copy Files */,
 				C2A3F2D617F4827800AC1C3B /* XCDYouTubeVideoPlayerViewController.h in Copy Files */,
+				9E71D3221C13C6170014ED0C /* EmbedVideoPlayerViewController.h in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,6 +190,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9E71D31F1C13C5D70014ED0C /* EmbedVideoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmbedVideoPlayerViewController.m; sourceTree = "<group>"; };
+		9E71D3201C13C5D70014ED0C /* EmbedVideoPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmbedVideoPlayerViewController.h; sourceTree = "<group>"; };
 		C20F579B18817D5400EDBFB0 /* XCDYouTubeKit iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "XCDYouTubeKit iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C20F579C18817D5400EDBFB0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		C20F57A718817D5400EDBFB0 /* XCDYouTubeClientTestCase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCDYouTubeClientTestCase.m; sourceTree = "<group>"; };
@@ -382,6 +389,8 @@
 		C2A3F2D217F4827800AC1C3B /* XCDYouTubeKit */ = {
 			isa = PBXGroup;
 			children = (
+				9E71D31F1C13C5D70014ED0C /* EmbedVideoPlayerViewController.m */,
+				9E71D3201C13C5D70014ED0C /* EmbedVideoPlayerViewController.h */,
 				C26231A5191D74D300D23900 /* Info.plist */,
 				C25308C318D7392500132734 /* XCDYouTubeClient.h */,
 				C25308C418D7392500132734 /* XCDYouTubeClient.m */,
@@ -473,6 +482,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E71D3231C13C6960014ED0C /* EmbedVideoPlayerViewController.h in Headers */,
 				C2F0E58E1944F82600D8EBA8 /* XCDYouTubeClient.h in Headers */,
 				C2F0E58F1944F82600D8EBA8 /* XCDYouTubeError.h in Headers */,
 				C2142F2A19644779000FA9C0 /* XCDYouTubeKit.h in Headers */,
@@ -523,7 +533,7 @@
 			dependencies = (
 			);
 			name = "XCDYouTubeKit tvOS";
-			productName = "XCDYouTubeKit";
+			productName = XCDYouTubeKit;
 			productReference = C215BE971BE2E36600F9783B /* XCDYouTubeKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
@@ -933,6 +943,7 @@
 				C2597EA61B0CE6D80030E9F2 /* XCDYouTubeLogger.m in Sources */,
 				C2FB52DE1918F88C00B2CBE6 /* XCDYouTubePlayerScript.m in Sources */,
 				C2A3F2D817F4827800AC1C3B /* XCDYouTubeVideoPlayerViewController.m in Sources */,
+				9E71D3211C13C5D70014ED0C /* EmbedVideoPlayerViewController.m in Sources */,
 				C2386B1F1974036300646123 /* XCDYouTubeVideoWebpage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -964,6 +975,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E71D3251C13C6A50014ED0C /* EmbedVideoPlayerViewController.m in Sources */,
 				C2F0E59C1944F8CF00D8EBA8 /* XCDYouTubeVideoOperation.m in Sources */,
 				C2F0E5991944F8C200D8EBA8 /* XCDYouTubeClient.m in Sources */,
 				C2F0E59A1944F8C700D8EBA8 /* XCDYouTubePlayerScript.m in Sources */,

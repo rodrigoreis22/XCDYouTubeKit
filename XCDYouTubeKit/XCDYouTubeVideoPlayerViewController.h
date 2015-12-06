@@ -2,13 +2,8 @@
 //  Copyright (c) 2013-2015 Cédric Luthi. All rights reserved.
 //
 
-#if !__has_feature(nullability)
-#define NS_ASSUME_NONNULL_BEGIN
-#define NS_ASSUME_NONNULL_END
-#define nullable
-#endif
-
 #import <MediaPlayer/MediaPlayer.h>
+#import "EmbedVideoPlayerViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -41,10 +36,7 @@ MP_EXTERN NSString *const XCDYouTubeVideoUserInfoKey;
  *
  *  Use the `<presentInView:>` method to play a YouTube video inline.
  */
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-@interface XCDYouTubeVideoPlayerViewController : MPMoviePlayerViewController
-#pragma clang diagnostic pop
+@interface XCDYouTubeVideoPlayerViewController : EmbedVideoPlayerViewController
 
 /**
  *  ------------------
@@ -62,8 +54,6 @@ MP_EXTERN NSString *const XCDYouTubeVideoUserInfoKey;
  *  @discussion You can pass a nil *videoIdentifier* (or use the standard `init` method instead) and set the `<videoIdentifier>` property later.
  */
 - (instancetype) initWithVideoIdentifier:(nullable NSString *)videoIdentifier __attribute__((objc_designated_initializer));
-
-- (instancetype) initWithContentURL:(nullable NSURL *)contentURL __attribute__((objc_designated_initializer));
 
 /**
  *  ------------------------------------
@@ -92,23 +82,6 @@ MP_EXTERN NSString *const XCDYouTubeVideoUserInfoKey;
  *  @see XCDYouTubeVideoQuality
  */
 @property (nonatomic, copy) NSArray *preferredVideoQualities;
-
-/**
- *  ------------------------
- *  @name Presenting a video
- *  ------------------------
- */
-
-/**
- *  Present the video inside a view.
- *
- *  @param view The view inside which you want to present the video.
- *
- *  @discussion The video view is added as a subview of the specified view. The video does not start playing immediately, you have to call `[videoPlayerViewController.moviePlayer play]` for playback to start. See `MPMoviePlayerController` documentation for more information.
- *
- *  Ownership of the XCDYouTubeVideoPlayerViewController instance is transferred to the view.
- */
-- (void) presentInView:(UIView *)view;
 
 @end
 
