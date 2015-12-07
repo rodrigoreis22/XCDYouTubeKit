@@ -12,4 +12,5 @@
 
 #if TARGET_OS_IOS || (!defined(TARGET_OS_IOS) && TARGET_OS_IPHONE)
 #import <XCDYouTubeKit/XCDYouTubeVideoPlayerViewController.h>
+#import <XCDYouTubeKit/EmbedVideoPlayerViewController.h>
 #endif
